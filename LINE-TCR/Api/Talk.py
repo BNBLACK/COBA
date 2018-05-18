@@ -17,17 +17,17 @@ class Talk:
   auth_query_path = "/api/v4/TalkService.do";
   http_query_path = "/S4";
   wait_for_mobile_path = "/Q";
-  host = "gw.line.naver.jp";
+  host = "gd2.line.naver.jp";
   port = 443;
 
-  UA = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+  UA = "Line/7.14.0"
   LA = "IOSIPAD\t7.14.0\tiPhone OS\t10.12.0"
 
   authToken = None
   cert = None
 
   def __init__(self):
-    self.transport = THttpClient.THttpClient('https://gw.line.naver.jp:443'+self.auth_query_path)
+    self.transport = THttpClient.THttpClient('https://gd2.line.naver.jp:443'+self.auth_query_path)
     self.transport.setCustomHeaders({
       "User-Agent" : self.UA,
       "X-Line-Application" : self.LA,
@@ -90,7 +90,7 @@ class Talk:
     self.transport.path = self.auth_query_path
 
     qr = self.client.getAuthQrcode(True, "Bot")
-    callback("Copy Kode QR nya Plak\nJangan Lama2\nBatas 1 menit:\n line://au/q/" + qr.verifier)
+    callback("Copy to Line and Click\nYour LINK QR is: line://au/q/" + qr.verifier)
 
     r = requests.get("https://" + self.host + self.wait_for_mobile_path, headers={
       "X-Line-Application": self.LA,
