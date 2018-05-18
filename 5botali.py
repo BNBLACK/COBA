@@ -6,26 +6,26 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 
 cl = LINETCR.LINE() #Luffy
-cl.login(token="EqnwyPvz8hJk1P2vo4oe.ZaKoWwkupm1w9r28+X/GFG.ZNuNKkENRTgWPoEBNQlN2Nf5lPBp3BCA7GlZivy/mAA=")
+cl.login(token="EsrAUijjBW39OeE3Bfw7.c3AuannFO2GnZDL3vUfOnW.B3cfIVw/wmmtCjtR3Vd2ygOAnoHOcAyHY39rdpRYZdQ=")
 cl.loginResult()
 
 ki = LINETCR.LINE() #Zorro
-ki.login(token="EqipctCRB21tQ3GaOn50.wGr95zTk0yWlu34UQ3qICa.4zt4ApyLrZ0PO0MDu6QXTvUrkIBy246H9O4Ef502g08=")
+ki.login(token="Es8erFshiQdAi4vQcj67.O0FGNtYKmYt9Qd28sB065W.LITU+/Q97sswaJxXlNaKoq6C+jxwOBTLIlS4FEOlN2E=")
 ki.loginResult()
 
 kk = LINETCR.LINE() #Sanji
-kk.login(token="EqnTUUJCvC86B6IBuLW2.YYeoM22Vhks1am4XV4nUSG.pUo4WIeZOQjWfvwmhQB1RkB5BqjmBhsbZ6RoVwfHliE=")
+kk.login(token="EsyIzDzPh3igo9cl3dX0.wGr95zTk0yWlu34UQ3qICa.29AElFCaYwa/FnE0DF8gfxambySmj2+Cem3wfZD6d/w=")
 kk.loginResult()
 
 kc = LINETCR.LINE() #Ussop
-kc.login(token="EqseZbl7AiLn8HMu2gue.BCvAaI8QeUkvdwYj/dr3hG.X82I18pZAP4D23yjRfQxdsocyYiielt+0shbN0R23a4=")
+kc.login(token="EsWV15Z9eXEfqysf4HC2.YYeoM22Vhks1am4XV4nUSG.X/KPXIeBiyOnoFvOHCXP3bnoy34sjF7RtJePhA8dT7k=")
 kc.loginResult()
 
 ks = LINETCR.LINE() #Chooper
-ks.login(token="Eq2i25Dwz3auH2BZZ7F7.O0FGNtYKmYt9Qd28sB065W.LJy+zX1liMQ2lpasWLcOTXbiGvt8iw/dBIDzndWJaeY=")
+ks.login(token="Essr5mkgTrngJfBUSQge.BCvAaI8QeUkvdwYj/dr3hG.5Dmal8lEBf9LiqcGLgLMv8H8pNPDfJsPS2iFfZDuMk0=")
 ks.loginResult()
 
-print "login success plak"
+print "login success "
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -75,10 +75,10 @@ Bmid = kk.getProfile().mid #Sanji
 Cmid = kc.getProfile().mid #Ussop
 Dmid = ks.getProfile().mid #Chooper
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,'ufacf66140718bd3daec2a45c36bd3203']
-admin=["u25418630a2952d6e99b2ec6df86ae9d3","uaa4a118d8bfa5051da06015d013e5994","u862ab2324f63bd912b547c79505cca72","ud43181d7e12eb605728a06b6ff99bd66","udd5ebfb3d92d40f71f9c15d72a303657"]
-owner=["u25418630a2952d6e99b2ec6df86ae9d3"]
-whitelist=[]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,"uf33a411f97b34a0bd3a80bef9b3b4432","u0b769400d35fa3680dcdd97756e16837","ua347e09d3ca43324fda83dbc49bd3ae7","u5a047de59b4ad18c0b537e2eab742270","ucb210e9b6daf1ca4b500ce31bf836eb2","u6dc55a022f2a12e2950d6c89f834771e"]
+admin=["uf33a411f97b34a0bd3a80bef9b3b4432","u25418630a2952d6e99b2ec6df86ae9d3"]
+owner=["uf33a411f97b34a0bd3a80bef9b3b4432"]
+whitelist=["uf33a411f97b34a0bd3a80bef9b3b4432"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -2346,7 +2346,7 @@ def bot(op):
           ginfo = cl.getGroup(op.param1)
           random.choice(KAC).sendText(op.param1, "Selamat Datang Di Grup  " + str(ginfo.name))
           random.choice(KAC).sendText(op.param1, "Founder Grup " + str(ginfo.name) + " :\n" + ginfo.creator.displayName)
-         # random.choice(KAC).sendText(op.param1,"Budayakan Baca Note !!! yah Ka 😊\nSemoga Betah Kk 😘")
+          random.choice(KAC).sendText(op.param1,"Budayakan Baca Note !!! yah Ka 😊\nSemoga Betah Kk 😘")
           print "MEMBER HAS JOIN THE GROUP"
         if op.type == 15:
           if op.param2 in Bots:
@@ -2372,7 +2372,7 @@ def a2():
 def autolike():
     for zx in range(0,500):
       hasil = cl.activity(limit=500)
-      if hasil['result']['posts'][zx]['postInfo']['liked'] == True:
+      if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
         try:
           cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1001)
           cl.comment(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],"👉Auto Like by ⭐⭐Koplaxs⭐⭐👈\n\n™SMULE VOICE FAMILY™")
@@ -2398,7 +2398,7 @@ time.sleep(0.01)
 def likePost():
     for zx in range(0,500):
         hasil = cl.activity(limit=500)
-        if hasil['result']['posts'][zx]['postInfo']['liked'] == True:
+        if hasil['result']['posts'][zx]['postInfo']['liked'] == False:
             if hasil['result']['posts'][zx]['userInfo']['mid'] in owner:
                 try:
                     cl.like(hasil['result']['posts'][zx]['userInfo']['mid'],hasil['result']['posts'][zx]['postInfo']['postId'],likeType=1002)
