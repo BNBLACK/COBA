@@ -25,9 +25,9 @@ class LINE:
     self.Talk = Talk()
     self._session = requests.session()
     self._headers = {
-           'X-Line-Application': 'IOSIPAD\t7.14.0\tiPhone OS\t10.12.0',
-           'X-Line-Access': 'Eo12n67pfDWuC869PTD3.juggmkkvlw6zSUXT/gRP0W.BJ5Fk2d8oaZYh5ACQuOtOO9Ksav7iNuAPkLYIMDxiJ8=',
-           'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+           'X-Line-Application': 'IOSIPAD\t7.14.0\tiPhone OS\t10.12.0', 
+           'X-Line-Access': 'Emp1jl3qOjxCjXEhmaN5.QdLXoVPaKOU6WpvD80Sijq.NcwnmLOaI/dIyi3Y84WTCOxbNTN27m3ODDpkMLDPY64=', 
+           'User-Agent': 'Line/7.14.0'
  }
 
   def login(self, mail=None, passwd=None, cert=None, token=None, qr=False, callback=None):
@@ -48,9 +48,9 @@ class LINE:
     self.authToken = self.Talk.authToken
     self.cert = self.Talk.cert
     self._headers = {
-              'X-Line-Application': 'IOSIPAD\t7.14.0\tiPhone OS\t10.12.0',
+              'X-Line-Application': 'IOSIPAD\t7.14.0\tiPhone OS\t10.12.0', 
               'X-Line-Access': self.authToken, 
-              'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+              'User-Agent': 'Line/7.14.0'
    }
     self.Poll = Poll(self.authToken)
     self.channel = channel.Channel(self.authToken)
@@ -166,7 +166,7 @@ class LINE:
             raise Exception('Upload image failure.')
         return True
 
-  def sendImageWithUrl(self, to_, url):
+  def sendImageWithURL(self, to_, url):
         """Send a image with given image url
 
         :param url: image url to send
@@ -250,7 +250,7 @@ class LINE:
             raise Exception('Upload audio failure.')
         return True
 
-  def sendAudioWithUrl(self, to_, url):
+  def sendAudioWithURL(self, to_, url):
         path = '%s/pythonLine-%1.data' % (tempfile.gettempdir(), randint(0, 9))
 
         r = requests.get(url, stream=True)
@@ -465,7 +465,7 @@ class LINE:
 
       prof = self.getProfile()
 
-      print("One Piece BOT")
+      print("NB TEAM BOT")
       print("mid -> " + prof.mid)
       print("Nama -> " + prof.displayName)
       print("Token -> " + self.authToken)
